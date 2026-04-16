@@ -5,7 +5,7 @@ pub struct Counter {
 }
 
 impl Counter {
-    fn update(&mut self, message: Message) {
+    pub fn update(&mut self, message: Message) {
         match message {
             Message::Increment => {
                 self.value += 1;
