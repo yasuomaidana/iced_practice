@@ -41,8 +41,19 @@ impl ColumnView<Message> for Counter {
             .height(Fill)
             .center();
 
+        let emoji = if self.value % 2 == 0 {
+            "👨‍🔬‍"
+        } else {
+            "😎"
+        };
+
+        let showing_text = text!("Counter app {}", emoji)
+            .size(20)
+            .width(Fill)
+            .height(Fill)
+            .center();
         //layout
-        let interface = column![increment, counter, decrement,];
+        let interface = column![showing_text, increment, counter, decrement,];
         interface
             .spacing(10)
             .align_x(Horizontal::Center)
